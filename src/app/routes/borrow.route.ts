@@ -1,7 +1,10 @@
 import express from "express";
+import { createBorrowBook, getBorrowedBooks } from "../controllers/borrow.controller";
 
 const router = express.Router();
 
-// Define your routes here
+
+router.post("/", createBorrowBook);
+router.get("/", getBorrowedBooks);
 
 export default router;

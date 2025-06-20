@@ -1,16 +1,17 @@
-import { model, Schema } from "mongoose";
-import validator from 'validator';
-import { IBook } from "../interface/book.interface";
-
-
-const bookSchema = new Schema<IBook>({
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
+const validator_1 = __importDefault(require("validator"));
+const bookSchema = new mongoose_1.Schema({
     title: {
         type: String,
         required: [true, 'Title is required'],
         trim: true,
         validate: {
-            validator: (val: string) =>
-                validator.isLength(val, { min: 1, max: 200 }),
+            validator: (val) => validator_1.default.isLength(val, { min: 1, max: 200 }),
             message: 'Title must be 1–200 characters long'
         }
     },
@@ -19,8 +20,7 @@ const bookSchema = new Schema<IBook>({
         required: [true, 'Author is required'],
         trim: true,
         validate: {
-            validator: (val: string) =>
-                validator.isLength(val, { min: 1, max: 100 }),
+            validator: (val) => validator_1.default.isLength(val, { min: 1, max: 100 }),
             message: 'Author must be 1–100 characters long'
         }
     },
@@ -37,8 +37,7 @@ const bookSchema = new Schema<IBook>({
     description: {
         type: String,
         validate: {
-            validator: (val: string) =>
-                val == null || validator.isLength(val, { max: 500 }),
+            validator: (val) => val == null || validator_1.default.isLength(val, { max: 500 }),
             message: 'Description must be at most 500 characters'
         }
     },
@@ -59,8 +58,5 @@ const bookSchema = new Schema<IBook>({
     timestamps: true,
     versionKey: false
 });
-
-
-const Book = model('Book', bookSchema);
-
-export default Book;
+const Book = (0, mongoose_1.model)('Book', bookSchema);
+exports.default = Book;
