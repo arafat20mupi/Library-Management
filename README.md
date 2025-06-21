@@ -192,13 +192,13 @@ src/
 
 ## 📺 Video Demo
 
-🎥 [Click here to watch](https://arafat-islam.vercel.app)
+🎥 [Click here to watch](https://www.youtube.com/watch?v=hIpbAXH_p18)
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 [https://library-management-nu.vercel.app](https://library-management-nu.vercel.app)
+🔗 [Live Link](https://libary-management-nu.vercel.app)
 
 ---
 
