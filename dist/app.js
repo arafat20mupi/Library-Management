@@ -11,10 +11,14 @@ const borrow_route_1 = __importDefault(require("./app/routes/borrow.route"));
 // Middleware 
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: ['http://localhost:5173', 'http://localhost:5174',],
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://libaryms.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true,
 }));
+app.use((req, res, next) => {
+    console.log("CORS Middleware Active");
+    next();
+});
 // Routes
 app.use('/api/books', book_route_1.default);
 app.use('/api/borrow', borrow_route_1.default);
