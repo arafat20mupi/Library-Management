@@ -8,7 +8,7 @@ import borrowRoutes from './app/routes/borrow.route'
 app.use(express.json())
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174',],
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://libaryms.netlify.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   credentials: true,
 }));
